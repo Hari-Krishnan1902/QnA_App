@@ -1,0 +1,333 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+/* register style starts */
+.register-body{
+    /* width:100%; */
+    height:100vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(222, 222, 255);
+    background: url("./assets/images/Regsiter-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.register{
+    height:400px;
+    font-size: 25px;
+    background:rgba(78, 78, 78, 0.137);;
+    /* linear-gradient(130deg, rgb(0, 0, 0), rgb(0, 26, 67)); */
+    color:rgb(0, 0, 0);
+    border-radius: 20px;
+    padding:40px;
+    color:white;
+}
+.register-main, .login-main{
+    width:275px;
+}
+.register-heading{
+    font-size:21px;
+}
+.register-form, .login-form{
+    padding-top:20px;
+    margin-top:10px;
+    /* border:1px solid red; */
+}
+.register-hr{
+    border: 1px solid rgb(131, 131, 131);
+    margin-top: 10px;
+}
+.register-input{
+    width:100%;
+    border-radius: 5px;
+    border:none;
+    padding:10px;
+    outline: 10px;
+    background-color: rgba(207, 207, 207, 0.137);
+    color:white;
+    /* border: 1px solid blue; */
+}
+.register-input::placeholder, .login-input::placeholder{
+    color:white;
+}
+.register-btn, .register-btn2, .login-btn{
+    padding:7px 20px;
+    border:none;
+    /* border:2px solid rgb(222, 222, 255); */
+    background-color: rgba(128, 128, 128, 0.148);
+    color:white;
+    border-radius: 10px;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+.register-btn:hover, .register-btn2:hover, .login-btn:hover{
+    background-color: #004edd;/*rgb(53, 63, 255);*/
+    /* border:2px solid rgb(222, 222, 255); */
+    color: white;
+}
+.register-already{
+    margin-top: 20px;
+    font-weight: 100;
+    font-size: 14px;
+    margin-left: 10px;
+    letter-spacing: 0.5px;
+}
+.register-btn2{
+    margin-left: 15px;
+}
+.register-response-message{
+    margin-top: 20px;
+    font-size: 15px;
+    padding:7px 10px;
+    letter-spacing: 0.5px;
+    border-radius: 5px;
+}
+/* register style ends */
+
+/* login stlye starts */
+.go-to-register{
+    text-decoration: underline;
+    color: #004edd;
+}
+/* login stlye ends  */
+
+/* home style starts */
+
+.home-container{
+    /* width:100vw; */
+    padding:10px;
+    background-color: rgb(24, 24, 24);
+    color:white;
+    /* height: 97vh; */
+}
+.home-header{
+    display:flex;
+    justify-content: space-between;
+    /* border:2px solid red; */
+    padding:25px 20px;
+    box-shadow: 0px 5px 7px rgb(48, 48, 48);
+    /* width: 100vw; */
+}
+.home-brand{
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-left: 2px solid #004edd;
+    padding:10px;
+}
+.home-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-profile h2{
+    margin: 0px 20px;
+}
+.home-logout-btn{
+    padding:10px 15px;
+    background-color: #004edd;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.home-qnlist{
+    /* border:2px solid red; */
+    color:white;
+    display: flex;
+    flex-wrap: wrap;
+    /* width:100%; */
+    /* height:100vh; */
+    padding: 40px;
+}
+
+.home-qnlist-div{
+    /* height: 100px; */
+    /* line-height: 40px; */
+    /* border: 2px solid fuchsia; */
+    padding: 20px 30px;
+    background-color: rgba(40, 40, 40, 0.309);
+    margin: 20px;
+    border-radius: 05px;
+    font-size: 20px;
+    width:100vw; 
+    /* min-width: 300px; */
+    
+}
+
+.home-qnlist-header{
+    /* border: 2px solid yellow; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.home-qnlist-h3{
+    font-variant: small-caps;
+    letter-spacing: 1px;
+    background-color: rgba(128, 128, 128, 0.252);
+    border-radius: 10px;
+    padding: 7px 15px;
+}
+.home-qnlist-p{
+    margin-top: 20px;
+
+}
+
+/* Footer Styling */
+.home-footer {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aeaeae;
+  background-color: #232323;
+ 
+}
+.home-ans-heading{
+    padding-left:35px;
+    font-size: 24px;
+    text-decoration: underline;
+}
+
+.icon{
+    font-size: 22px;
+    margin-bottom: -5px;
+    margin-right: 7px;
+    
+}
+/* home style ends  */
+
+/* askquestion style starts  */
+
+.ask-container{
+    border:1px solid rgb(169, 169, 169);
+    margin:40px 40px;
+    padding:40px;
+    border-radius: 40px;
+    /* width: 100vw; */
+    /* height: 100vh; */
+}
+.ask-form{
+    /* border:2px solid red; */
+    display: flex;
+    margin-top: 20px;
+}
+.ask-input{
+    background-color: transparent;
+    width:200px;
+    border:1px solid grey;
+    padding:10px 15px;
+    border-radius: 20px;
+    margin:0px 10px;
+    color: white;
+    letter-spacing: 0.5px;
+}
+.ask-input-question{
+    width:100%;
+}
+.ask-submit{
+    width:200px;
+}
+
+ /* askquestion style ends  */
+
+ /* Answer Style Starts*/
+
+ .answer-container{
+    background-color:rgb(24, 24, 24);
+    /* border: 2px solid green; */
+    color: white;
+    height: 100vh;
+    /* width: 100vw; */
+}
+
+.answer-header-div{
+    padding: 0px 30px;
+    /* border: 2px solid pink; */
+}
+
+.answer-header-tag{
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+    align-items: center;
+    
+}
+.answer-header-h3{
+    background-color: #303030;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 21px;
+    font-variant: small-caps;
+    letter-spacing: 1px;
+
+}
+.answer-small{
+    font-size: 21px;
+}
+.answer-header-p{
+    padding: 30px;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+.answer{
+     display: flex;
+    justify-content: center;
+    /* padding:30px; */
+    align-items: center;
+    /* border: 2px solid red; */
+}
+.answer-ul{
+   
+    /* border: 2px solid orange; */
+    width: 90%;
+}
+
+.answer-li{
+     padding: 30px;
+     margin: 25px;
+     list-style-type: none;
+     /* background-color: #303030; */
+     /* border-radius: 15px; */
+     border-bottom: 2px solid white;
+     /* background-color:rgb(24, 24, 24); */
+}
+
+.answer-p{
+    margin: 12px;
+    font-size: 21px;
+    
+}
+
+.ans-head{
+    margin-left: 30px;
+}
+
+.answer{
+      background-color:rgb(24, 24, 24);
+      /* border:2px solid red */
+}
+
+.your-ans{
+    padding: 30px;
+    /* margin-left: 30px; */
+    background-color:rgb(24, 24, 24);
+    /* border: 2px solid orange; */
+}
+.answer-form{
+    /* border: 2px solid red; */
+    margin-top: 45px;
+    /* background-color:rgb(24, 24, 24); */
+}
+.ans-input{
+    border-radius: 5px;
+   margin: 20px 0px;
+   width: 400px;
+    padding: 10px 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+ /* Answer Style ends*/

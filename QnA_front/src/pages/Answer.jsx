@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { CiUser } from "react-icons/ci";
 
 const Answer = () => {
   const { id } = useParams(); // question ID from URL
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [newAnswer, setNewAnswer] = useState('');
-  const username = localStorage.getItem("username");
+  const user = localStorage.getItem("user");
 
   // Fetch question
   useEffect(() => {
@@ -22,7 +23,10 @@ const Answer = () => {
       .then(res => setAnswers(res.data))
       .catch(err => console.error("Failed to fetch answers", err));
   }, [id]);
-
+    const handleLogout = () => {
+    localStorage.removeItem("user");
+    window.location.href = "/login";
+  };
   // Submit new answer
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +36,7 @@ const Answer = () => {
       await axios.post("http://localhost:8080/api/answers/post", {
         content: newAnswer,
         questionId: id,
-        username: username
+        username: user
       });
 
       setNewAnswer("");
@@ -45,32 +49,44 @@ const Answer = () => {
   };
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div  class="answer-container">
+       <header class="home-header">
+          <p class="home-brand">ASKIFY</p>
+          <div class="home-profile">
+              <h2>Welcome, {user}</h2>
+              <button class="home-logout-btn" onClick={handleLogout}>Logout</button>
+          </div>
+        </header>
       {question ? (
         <div>
-          <h2>{question.title}</h2>
-          <p>{question.description}</p>
-          <small>Asked by: {question.user?.username || 'Unknown'}</small>
-
-          <hr />
-          <h3>Answers</h3>
-          {answers.length > 0 ? (
-            <ul>
-              {answers.map((ans) => (
-                <li key={ans.id} style={{ marginBottom: '10px' }}>
-                  <p>{ans.content}</p>
-                  <small>Answered by: {ans.user?.username || "Unknown"}</small>
+          <div class="answer-header-div">
+              <div class="answer-header-tag">
+                <span class="answer-header-h3">{question.title}</span>
+                <small class="answer-small"><CiUser class="icon" /> {question.user}</small>
+              </div>
+               <h3 class="home-ans-heading">Question</h3>
+              <p class="answer-header-p">{question.description}</p>
+          </div>
+          
+          <h3 class="home-ans-heading ans-head">Answers</h3>
+          <div class="answer">
+               {answers.length > 0 ? (
+               <ul class="answer-ul">
+                {answers.map((ans) => (
+                <li key={ans.id} class="answer-li">
+                  <small class="answer-small"><CiUser class="icon" />{ans.user?.username || "Unknown"}</small>
+                  <p class="answer-p">{ans.content}</p>
                 </li>
               ))}
             </ul>
           ) : (
             <p>No answers yet.</p>
           )}
-
-          <hr />
-          <h3>Your Answer</h3>
-          <form onSubmit={handleSubmit}>
-            <textarea
+          </div>
+        <div className="your-ans">
+            <h3>Your Answer</h3>
+          <form onSubmit={handleSubmit} class="answer-form">
+            <textarea class="ask-input ans-input"
               rows="4"
               cols="50"
               value={newAnswer}
@@ -79,13 +95,24 @@ const Answer = () => {
               required
             />
             <br />
-            <button type="submit">Post Answer</button>
+            <button type="submit"  class="home-logout-btn">Post Answer</button>
           </form>
         </div>
+          
+            
+        </div>
+
       ) : (
         <p>Loading question...</p>
       )}
+       <footer class="home-footer">
+      <p>&copy; 2025 Clarify Me. All rights reserved.</p>
+    </footer>
+      
+    
     </div>
+    
+    
   );
 };
 

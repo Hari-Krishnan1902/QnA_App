@@ -16,7 +16,7 @@ const Login = () => {
       });
 
       // ✅ Save to localStorage
-      localStorage.setItem("username", response.data.username);
+      localStorage.setItem("user", response.data.username);
 
 
       // ✅ Redirect to home/dashboard
@@ -28,24 +28,32 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
+    <div class="register-body">
+      <div class="register">
+        <div class="login-main">
+        <h2 class="register-heading">Login Form</h2>
+        <hr class="register-hr" />
+    <form class="login-form" onSubmit={handleLogin}>
+      <input class="register-input"
         type="text"
         placeholder="Username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-      /><br />
-      <input
+      /><br ></br><br />
+      <input class="register-input"
         type="password"
         placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-      /><br />
-      <button type="submit">Login</button>
-
-      <p> Register</p>
-      <button onClick={() => navigate('/register')}>Go to register</button>
+      /><br /><br />
+      <button class="register-btn"  type="submit">Log In</button>
+      {/* <button class="register-btn2" onClick={() => navigate('/register')}>Sign In</button> */}
+      <p class="register-already">Create a new account?<span class="register-already go-to-register" onClick={() => navigate('/register')}>Go to Register</span></p>
+      
     </form>
+    </div>
+    </div>
+    </div>
   );
 };
 

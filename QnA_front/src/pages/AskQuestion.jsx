@@ -11,8 +11,8 @@ const AskQuestion = () => {
     e.preventDefault();
 
    
-  const user = JSON.parse(localStorage.getItem("user"));
-  const loggedInUsername = user?.username;
+  const user = localStorage.getItem("user");
+  const loggedInUsername = user;
 
     if (!loggedInUsername) {
       alert("User not logged in. Please login first.");
@@ -31,7 +31,7 @@ const AskQuestion = () => {
       setTitle("");
       setDescription("");
 
-      navigate('/'); 
+      // navigate('/'); 
     } catch (error) {
       console.error("Submission error:", error);
       alert("Failed to post question. Please try again.");
@@ -39,10 +39,10 @@ const AskQuestion = () => {
   };
 
   return (
-    <div>
+    <div class="ask-container">
       <h2>Ask a Question</h2>
-      <form onSubmit={handleSubmit}>
-        <input
+      <form class="ask-form" onSubmit={handleSubmit}>
+        <input class="ask-input"
           type="text"
           placeholder="Enter question title"
           value={title}
@@ -50,14 +50,14 @@ const AskQuestion = () => {
           required
         />
         <br />
-        <textarea
+        <input class="ask-input ask-input-question"
           placeholder="Enter question description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
         <br />
-        <button type="submit">Submit Question</button>
+        <button class="home-logout-btn ask-submit" type="submit">Submit Question</button>
       </form>
     </div>
   );

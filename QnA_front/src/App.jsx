@@ -6,9 +6,11 @@ import Register from './pages/Register';
 import Home from './pages/Home';
 import AskQuestion from './pages/AskQuestion';
 import Answer from './pages/Answer';
+import './style.css';
+
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  const user =localStorage.getItem("user");
 
   return (
     <Router>
@@ -17,7 +19,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/home" element={<Home />} />
-        {/* <Route path="/ask" element={user ? <AskQuestion /> : <Navigate to="/login" />} /> */}
         <Route path="/ask" element={<AskQuestion />} />
         <Route path="/answer/:id" element={<Answer />} />
       </Routes>
