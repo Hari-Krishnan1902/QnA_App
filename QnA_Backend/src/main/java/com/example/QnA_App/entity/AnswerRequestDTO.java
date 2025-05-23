@@ -23,5 +23,5 @@ public class AnswerRequestDTO {
 		this.questionId = questionId;
 	}
 
-    // Getters and setters
+    
 }
